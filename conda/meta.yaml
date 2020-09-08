@@ -1,5 +1,5 @@
 {% set name = "lavavu" %}
-{% set version = "1.6.1" %}
+{% set version = "1.6.2" %}
 
 package:                                                  
   name: "{{ name|lower }}"
@@ -16,16 +16,15 @@ build:
   script: "{{ PYTHON }} -m pip install . -vv"     
 
 requirements:
+  build:
+    - {{ compiler('c') }}
   host:
-    - aiohttp
-    - jupyter-server-proxy
-    - numpy >=1.11
     - pip
     - python
   run:
     - aiohttp
     - jupyter-server-proxy
-    - numpy >=1.11
+    - numpy
     - python
 
 test:
