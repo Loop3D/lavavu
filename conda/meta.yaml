@@ -10,10 +10,7 @@ source:
 
 build:
   number: 0
-  entry_points:
-    - LV = lavavu.__main__:main
-    - LavaVu = lavavu.__main__:main
-  script: "{{ PYTHON }} -m pip install . -vv"     
+  script: "{{ PYTHON }} -m pip install ."     
 
 requirements:
   build:
@@ -30,9 +27,6 @@ requirements:
 test:
   imports:
     - lavavu
-  commands:
-    - LV --help
-    - LavaVu --help
 
 about:
   home: "https://github.com/lavavu/LavaVu"
